@@ -1,0 +1,51 @@
+import React, { useEffect, useState } from 'react';
+import { Container, Row} from 'reactstrap';
+import CharacterCol from './CharacterCol';
+import getEightRandomNumbers from '../util/RandomNumbers';
+import { getCharacter } from "rickmortyapi";
+
+
+export default function Layout() {
+    const [characters, setCharacters] = useState([]);
+
+    useEffect( ()=>{
+        async function fetchData(){
+            let indices = getEightRandomNumbers();            
+            for(let num of indices){
+                try{
+                    const character = await getCharacter(num);
+                    characters.push(character);
+                    
+                }catch(err){
+                    console.log(`Error: ${err}`);
+                }
+            }
+            setCharacters([...characters]);
+            console.log(characters);
+        }
+        fetchData();
+    },[])
+
+    return (
+        <div >
+            <Container className="mt-3" fluid>
+                <Row  className='d-flex justify-content-around mb-2'>
+                    {
+                        characters.map((char) => {
+                            return <CharacterCol info={char.data} key={char.data.id}/>
+                        })
+                    }
+                    {/* <CharacterCol />
+                    <CharacterCol />
+                    <CharacterCol />
+                    <CharacterCol />
+                    <CharacterCol />
+                    <CharacterCol />
+                    <CharacterCol />
+                    <CharacterCol /> */}
+                </Row>
+                
+            </Container>
+        </div>
+    )
+}

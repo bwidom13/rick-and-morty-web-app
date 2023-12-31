@@ -1,38 +1,22 @@
-.App {
-  text-align: center;
+Body{
+  
+  background-image: url("https://wallpaperboat.com/wp-content/uploads/2019/04/rick-and-morty-wallpaper-portal-wallpaper-001.jpg");
+  /* animation-name: App-logo-spin;
+  animation-duration: 4s; */
+  /* background-color: blue; */
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
+/* 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .background {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg);    
   }
-  to {
+  to {    
     transform: rotate(360deg);
   }
-}
+} */
