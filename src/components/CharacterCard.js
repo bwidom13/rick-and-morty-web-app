@@ -33,7 +33,7 @@ export default function CharacterCard({info}) {
                 />
                 <CardBody>
                     <CardTitle >
-                        <h5 style={{fontStyle:"oblique"}}>
+                        <h5 style={{fontStyle:"oblique", fontSize}}>
                             {info.name}
                         </h5>
                     </CardTitle>
@@ -47,7 +47,7 @@ export default function CharacterCard({info}) {
                     </CardSubtitle>
                 </CardBody>
             </Card>
-            <Modal isOpen={modal} toggle={toggle} size='xl'>
+            <Modal isOpen={modal} toggle={toggle} size='lg'>
                 <ModalHeader toggle={toggle} >{info.name}</ModalHeader>
                 
                 <ModalBody >
@@ -55,9 +55,9 @@ export default function CharacterCard({info}) {
                         <img src={info.image} className='mx-3' style={{height:"200px",width:"200px"}}/>
                         <div>
                             <h3>Species: {info.species}</h3>
-                            <h3>Type: {info.type}</h3>
+                            {info.type !== "" && <h3>Type: {info.type}</h3>}
                             <h3>Gender: {info.gender}</h3>
-                            <h3>Origin: {info.origin.name}</h3>
+                            {info.origin.name !== "" && <h3>Origin: {info.origin.name}</h3>}
                         </div>
                     </div>                                                    
                     

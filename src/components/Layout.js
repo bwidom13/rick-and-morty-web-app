@@ -20,8 +20,7 @@ export default function Layout() {
                     console.log(`Error: ${err}`);
                 }
             }
-            setCharacters([...characters]);
-            console.log(characters);
+            setCharacters([...characters]);            
         }
         fetchData();
     },[])
