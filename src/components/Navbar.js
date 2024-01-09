@@ -16,6 +16,7 @@ import {
 } from 'reactstrap';
 import SearchBar from './SearchBar';
 import Search from './Search';
+import SearchBarModal from './SearchBarModal';
 
 
 
@@ -53,6 +54,7 @@ function NavBar(args) {
 
                         <NavItem className='w-100'>                        
                             <Search />
+                            {/* <SearchBarModal /> */}
                         </NavItem>
                     </Nav>
                     

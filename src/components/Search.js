@@ -1,47 +1,72 @@
 import React, { useEffect, useState } from 'react'
 import { Input, ListGroup, ListGroupItem } from 'reactstrap'
 import MyListGroupItem from './ListGroupItem';
-import { getCharacter } from 'rickmortyapi';
+import { getCharacters } from 'rickmortyapi';
 
 export default function Search() {
-    const width = "400px"
+    const width = "600px"
     const [showOptions, setShowOptions] = useState(false);
-    let [character, setCharacter] = useState({});
+    const [characters, setCharacters] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("");
+    const [filterObject, setFilterObject] = useState({name:"a"});
+
     async function f(){
-        let resp = await getCharacter(234)
-        character = resp.data;
-        setCharacter(character);
-        console.log(character);
-        // let x = res.data
-        // setCharacter(x);
-        // console.log(character);
+        let x = document.getElementById("input").value;
+        let newObj = {name : x};
+        getCharacters(newObj).then(
+            (res) => {
+                
+                if(res.status === 200){
+                    // characters = res.data.results
+                    setCharacters([...res.data.results]);
+
+                    // console.log(res.data.results);
+                }else{
+                    console.log(res.status);
+                }
+            }
+        );
     }
     useEffect(()=>{
-
         f();
-    },[])
+    },[characters])
     return (
         <div>
-            <Input style={{ width: width }} onFocus={() => setShowOptions(true)}
-            onBlur={()=>setShowOptions(false)}/>
+            <Input id="input" style={{ width: width }} onFocus={() => setShowOptions(true)}
+            onBlur={()=>setShowOptions(false)}
+            onChange={(e) => {
+                // setSearchQuery(e.target.value);
+                // let newObj = {name : e.target.value};
+                // setFilterObject(p => {return {...p, ...newObj}});
+                // console.log("filter object: " + filterObject.name);
+                
+                // getCharacters(filterObject).then(
+                //     (res) => {
+                        
+                //         if(res.status === 200){
+                //             // characters = res.data.results
+                //             setCharacters([...res.data.results]);
+    
+                //             // console.log(res.data.results);
+                //         }else{
+                //             console.log(res.status);
+                //         }
+                //     }
+                // );  
+
+                // setCharacters(characters);
+            }
+            }
+            />
             <div className="" style={{
                 width: width, position: "absolute", zIndex: "1"
             }}>
-                {showOptions && <ListGroup style={{ width: width }}>
-                    <MyListGroupItem info={character}/>
-                    <ListGroupItem>
-                        Dapibus ac facilisis in
-                    </ListGroupItem>
-                    <ListGroupItem>
-                        Morbi leo risus
-                    </ListGroupItem>
-                    <ListGroupItem>
-                        Porta ac consectetur ac
-                    </ListGroupItem>
-                    <ListGroupItem>
-                        Vestibulum at eros
-                    </ListGroupItem>
+                {showOptions && <ListGroup style={{ width: width }}>                    
+                    {characters.slice(-5).map((character) => {                    
+                        return <MyListGroupItem info={character} key={character.id}/>
+                    })}
                 </ListGroup>}
+                
             </div>
         </div>
     )

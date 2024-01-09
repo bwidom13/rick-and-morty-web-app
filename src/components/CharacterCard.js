@@ -33,7 +33,7 @@ export default function CharacterCard({info}) {
                 />
                 <CardBody>
                     <CardTitle >
-                        <h5 style={{fontStyle:"oblique", fontSize}}>
+                        <h5 style={{fontStyle:"oblique"}}>
                             {info.name}
                         </h5>
                     </CardTitle>
