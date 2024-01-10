@@ -4,7 +4,7 @@ import randomNumbers from "random-numbers";
 function getEightRandomNumbers(){
     let nums = [];
     let currentNum;
-    for(let i = 0; i < 1; i++){
+    for(let i = 0; i < 8; i++){
         currentNum = randomNumbers.create(0, 826);
         while(nums.includes(currentNum)){
             currentNum = randomNumbers.create(0, 826);

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Input, ListGroup, ListGroupItem } from 'reactstrap'
 import MyListGroupItem from './ListGroupItem';
 import { getCharacters } from 'rickmortyapi';
+import { Link } from 'react-router-dom';
 
 export default function Search() {
     const width = "600px"
@@ -16,11 +17,8 @@ export default function Search() {
         getCharacters(newObj).then(
             (res) => {
                 
-                if(res.status === 200){
-                    // characters = res.data.results
+                if(res.status === 200){                    
                     setCharacters([...res.data.results]);
-
-                    // console.log(res.data.results);
                 }else{
                     console.log(res.status);
                 }
@@ -33,40 +31,24 @@ export default function Search() {
     return (
         <div>
             <Input id="input" style={{ width: width }} onFocus={() => setShowOptions(true)}
-            onBlur={()=>setShowOptions(false)}
-            onChange={(e) => {
-                // setSearchQuery(e.target.value);
-                // let newObj = {name : e.target.value};
-                // setFilterObject(p => {return {...p, ...newObj}});
-                // console.log("filter object: " + filterObject.name);
+            onBlur={()=>setShowOptions(false)}    
+                    
+            >
                 
-                // getCharacters(filterObject).then(
-                //     (res) => {
-                        
-                //         if(res.status === 200){
-                //             // characters = res.data.results
-                //             setCharacters([...res.data.results]);
-    
-                //             // console.log(res.data.results);
-                //         }else{
-                //             console.log(res.status);
-                //         }
-                //     }
-                // );  
-
-                // setCharacters(characters);
-            }
-            }
-            />
+            </Input>
             <div className="" style={{
                 width: width, position: "absolute", zIndex: "1"
-            }}>
+            }}
+            >
                 {showOptions && <ListGroup style={{ width: width }}>                    
                     {characters.slice(-5).map((character) => {                    
-                        return <MyListGroupItem info={character} key={character.id}/>
+                        return (
+                            
+                            <MyListGroupItem info={character} key={character.id}/>
+                            
+                        )
                     })}
-                </ListGroup>}
-                
+                </ListGroup>}                
             </div>
         </div>
     )

@@ -18,8 +18,7 @@ function ModalExample(props) {
 
     return (
         <div>
-            <Input onFocus={
-                toggle}/>
+            <Input onFocus={toggle}/>
             <Button color="danger" onClick={toggle}>
                 Click Me
             </Button>

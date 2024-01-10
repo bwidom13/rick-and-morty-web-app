@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Outlet, Link } from "react-router-dom";
 
 import {
     Collapse,
@@ -53,13 +54,14 @@ function NavBar(args) {
                         </UncontrolledDropdown>
 
                         <NavItem className='w-100'>                        
-                            <Search />
-                            {/* <SearchBarModal /> */}
+                            <Search />                            
                         </NavItem>
                     </Nav>
                     
                 </Collapse>
             </Navbar>
+
+            <Outlet />
         </div>
     );
 }

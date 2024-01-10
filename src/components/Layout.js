@@ -34,14 +34,6 @@ export default function Layout() {
                             return <CharacterCol info={char.data} key={char.data.id}/>
                         })
                     }
-                    {/* <CharacterCol />
-                    <CharacterCol />
-                    <CharacterCol />
-                    <CharacterCol />
-                    <CharacterCol />
-                    <CharacterCol />
-                    <CharacterCol />
-                    <CharacterCol /> */}
                 </Row>
                 
             </Container>
