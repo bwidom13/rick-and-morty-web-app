@@ -42,10 +42,8 @@ export default function Search() {
             >
                 {showOptions && <ListGroup style={{ width: width }}>                    
                     {characters.slice(-5).map((character) => {                    
-                        return (
-                            
-                            <MyListGroupItem info={character} key={character.id}/>
-                            
+                        return (                            
+                            <MyListGroupItem info={character} key={character.id}/>                            
                         )
                     })}
                 </ListGroup>}                

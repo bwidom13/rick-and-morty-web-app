@@ -22,13 +22,13 @@ export default function PersonalProfile() {
         <section className="vh-80">
             <MDBContainer className="py-5 h-100">
                 <MDBRow className="justify-content-center align-items-center h-100">
-                    <MDBCol lg="6" className="mb-4 mb-lg-0">
-                        <MDBCard className="mb-3" style={{ borderRadius: '.5rem' }}>
+                    <MDBCol lg="6" className="mb-4 mb-lg-0" >
+                        <MDBCard className="mb-3" style={{ borderRadius: '.5rem', width: '100%', height:"100%" }}>
                             <MDBRow className="g-0">
                                 <MDBCol md="4" className="gradient-custom text-center text-white"
-                                    style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
+                                    style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem', width: '100%', height:"100%" }}>
                                     <MDBCardImage src={charInfo.image}
-                                        alt="Avatar" className="my-5" style={{ width: '100%' }} fluid />
+                                        alt="Avatar" className="my-5" style={{ width: '100%', height:"100%" }} fluid />
                                     <MDBTypography tag="h5">{charInfo.name}</MDBTypography>
                                     <MDBCardText>{charInfo.status}</MDBCardText>
                                     <MDBIcon far icon="edit mb-5" />
@@ -58,12 +58,6 @@ export default function PersonalProfile() {
                                                 <MDBCardText className="text-muted">{charInfo.location.name}</MDBCardText>
                                             </MDBCol>
                                         </MDBRow>
-
-                                        <div className="d-flex justify-content-start">
-                                            <a href="#!"><MDBIcon fab icon="facebook me-3" size="lg" /></a>
-                                            <a href="#!"><MDBIcon fab icon="twitter me-3" size="lg" /></a>
-                                            <a href="#!"><MDBIcon fab icon="instagram me-3" size="lg" /></a>
-                                        </div>
                                     </MDBCardBody>
                                 </MDBCol>
                             </MDBRow>

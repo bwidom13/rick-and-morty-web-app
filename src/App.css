@@ -1,9 +1,5 @@
 Body{
-  
   background-image: url("https://wallpaperboat.com/wp-content/uploads/2019/04/rick-and-morty-wallpaper-portal-wallpaper-001.jpg");
-  /* animation-name: App-logo-spin;
-  animation-duration: 4s; */
-  /* background-color: blue; */
 }
 
 .ListGroupItem :hover{
@@ -20,18 +16,4 @@ Body{
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
 }
-/* 
-@media (prefers-reduced-motion: no-preference) {
-  .background {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);    
-  }
-  to {    
-    transform: rotate(360deg);
-  }
-} */

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row} from 'reactstrap';
-import CharacterCol from './CharacterCol';
+import CharacterCol from '../components/CharacterCol';
 import getEightRandomNumbers from '../util/RandomNumbers';
 import { getCharacter } from "rickmortyapi";
 
 
-export default function Layout() {
+export default function Home() {
     const [characters, setCharacters] = useState([]);
 
     useEffect( ()=>{
@@ -34,8 +34,7 @@ export default function Layout() {
                             return <CharacterCol info={char.data} key={char.data.id}/>
                         })
                     }
-                </Row>
-                
+                </Row>                
             </Container>
         </div>
     )
